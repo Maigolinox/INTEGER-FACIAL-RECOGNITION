@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ModernGUI_V3
 {
@@ -25,7 +26,8 @@ namespace ModernGUI_V3
             button2.BackColor = Color.FromArgb(12, 61, 92);
             button3.BackColor = Color.FromArgb(12, 61, 92);
         }
-        
+        static string conexion = "SERVER=127.0.0.1;PORT=3306;DATABASE=integer5;UID=root;PASSWORD=;";
+        MySqlConnection cn = new MySqlConnection(conexion);
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
@@ -157,6 +159,7 @@ namespace ModernGUI_V3
 
         public void button4_Click_1(object sender, EventArgs e)
         {
+            //cn.Open();
             if (textBox1.Text=="admin" && textBox2.Text=="admin")
             {
                 label1.Visible = false;
@@ -169,6 +172,16 @@ namespace ModernGUI_V3
                 button2.Visible = true;
                 button3.Visible = true; 
                 form3.listBox1.Items.Add ("Ingreso nuevo a las: "+DateTime.Now);
+
+
+                //string date; DateTime.Now(date);
+
+                //DateTime.Now;
+                //string insertar = "INSERT INTO bitacora(Id_)values(@id,@nombres,@apellidos,@telefono)";
+                //MySqlCommand cmd = new MySqlCommand(insertar,cn);
+                //cmd.Parameters.AddWithValue("@id", DateTime.Now);
+                //Convert.ToString(DateTime.Now);
+
 
 
 
