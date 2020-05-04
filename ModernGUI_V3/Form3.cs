@@ -39,7 +39,8 @@ namespace ModernGUI_V3
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            Visor_Reporte visor_reporte = new Visor_Reporte();
+            visor_reporte.ShowDialog();
         }
         public DataTable llenar_grid(){
             cn.Open();
@@ -52,5 +53,11 @@ namespace ModernGUI_V3
             return dt;
         }
 
+
+
+
+
+
+        }
+
     }
-}

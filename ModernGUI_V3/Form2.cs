@@ -23,7 +23,6 @@ namespace ModernGUI_V3
             checkBox2.Enabled = false;
             checkBox3.Enabled = false;
             checkBox4.Enabled = false;
-            try { serialPort1.Open(); } catch (Exception msg) { MessageBox.Show(msg.ToString()); }
     }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +34,8 @@ namespace ModernGUI_V3
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try { serialPort1.Open(); } catch (Exception msg) { MessageBox.Show(msg.ToString()); }
+
             bandera = 1;
             button3.Enabled = true;
             button2.Enabled = false;
@@ -152,7 +153,7 @@ namespace ModernGUI_V3
         {
             if (bandera == 1)
             {
-                serialPort1.Write("9");
+                //serialPort1.Write("9");
                 time++;
                 if (time == 100)
                 {

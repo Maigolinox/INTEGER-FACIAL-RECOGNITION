@@ -22,9 +22,12 @@ namespace ModernGUI_V3
             button1.Visible = false;
             button2.Visible = false;
             button3.Visible = false;
+            button5.Visible = false;
             button1.BackColor = Color.FromArgb(12, 61, 92);
             button2.BackColor = Color.FromArgb(12, 61, 92);
             button3.BackColor = Color.FromArgb(12, 61, 92);
+            button5.BackColor = Color.FromArgb(12, 61, 92);
+
         }
         static string conexion = "SERVER=127.0.0.1;PORT=3306;DATABASE=integer5;UID=root;PASSWORD=;";
         MySqlConnection cn = new MySqlConnection(conexion);
@@ -170,7 +173,8 @@ namespace ModernGUI_V3
                 button4.Visible = false;
                 button1.Visible = true;
                 button2.Visible = true;
-                button3.Visible = true; 
+                button3.Visible = true;
+                button5.Visible = true;
                 form3.listBox1.Items.Add ("Ingreso nuevo a las: "+DateTime.Now);
 
 
@@ -192,6 +196,19 @@ namespace ModernGUI_V3
 
 
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Reconocimiento reconocimiento = new Reconocimiento();
+            reconocimiento.ShowDialog();
+            //AbrirFormulario<Reconocimiento>();
+            this.Hide();
+        }
+
+        private void panelBarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
         #endregion
         //METODO PARA ABRIR FORMULARIOS DENTRO DEL PANEL
@@ -223,6 +240,10 @@ namespace ModernGUI_V3
                 button2.BackColor = Color.FromArgb(4, 41, 68);
             if (Application.OpenForms["Form3"] == null)
                 button3.BackColor = Color.FromArgb(4, 41, 68);
+            if (Application.OpenForms["Reconococimiento"] == null)
+                button4.BackColor = Color.FromArgb(4, 41, 68);
+            if (Application.OpenForms["Registrar"] == null)
+                button5.BackColor = Color.FromArgb(4, 41, 68);
         }
     }
 }
