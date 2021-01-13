@@ -1,2 +1,2 @@
-# Modern GUI Multi Form-Winform, C#
-VICTOR MIGUEL TERRON MACIAS
+# GRAPHICAL USER INTERFACE 
+VICTOR MIGUEL TERRON MACIAS-Adaptation of a graphical user inteface
